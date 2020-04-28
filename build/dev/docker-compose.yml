@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  nginx:
+    build: nginx
+    container_name: nginx-container
+    ports:
+      - "8080:80"
+      - "443:443"
+    volumes:
+      - ../../public:/usr/src/www/public
+      - ./nginx/config:/etc/nginx/conf.d
+      - ../../var/nginx:/var/log/nginx
+    depends_on:
+      - php
+
+  php:
+    build: php
+    container_name: php-fpm-container
+    volumes:
+      - ../../:/usr/src/www/
+      - $SSH_AUTH_SOCK:/tmp/agent.sock
+    environment:
+      - SSH_AUTH_SOCK=/tmp/agent.sock
+    env_file:
+      - .env

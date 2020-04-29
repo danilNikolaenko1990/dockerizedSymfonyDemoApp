@@ -1,6 +1,25 @@
 version: '3.8'
 
 services:
+  db:
+    build: postgres
+    container_name: postgres-container
+    restart: always
+    ports:
+      - 5432:5432 #for phpstorm postgres client
+    volumes:
+      - ./postgres/schema.sql:/docker-entrypoint-initdb.d/10-init.sql
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - "8081:8080"
+
   nginx:
     build: nginx
     container_name: nginx-container
@@ -18,7 +37,7 @@ services:
     build: php
     container_name: php-fpm-container
     depends_on:
-      - db
+      - "db"
     volumes:
       - ../../:/usr/src/www/
       - $SSH_AUTH_SOCK:/tmp/agent.sock
@@ -26,22 +45,3 @@ services:
       - SSH_AUTH_SOCK=/tmp/agent.sock
     env_file:
       - .env
-
-  db:
-    build: postgres
-    container_name: postgres-container
-    restart: always
-    ports:
-      - 5432:5432 #for phpstorm postgres client
-    volumes:
-      - ./postgres/init.sql:/docker-entrypoint-initdb.d/10-init.sql
-    environment:
-      POSTGRES_DB: postgres
-      POSTGRES_USER: admin
-      POSTGRES_PASSWORD: admin
-
-  adminer:
-    image: adminer
-    restart: always
-    ports:
-      - "8081:8080"

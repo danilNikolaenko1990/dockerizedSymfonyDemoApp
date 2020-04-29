@@ -32,7 +32,7 @@ services:
     environment:
       - SSH_AUTH_SOCK=/tmp/agent.sock
     env_file:
-      - .env
+      - ../../.env
 
   php-cli:
     build: php
@@ -42,7 +42,7 @@ services:
     volumes:
       - ../../:/usr/src/www/
     env_file:
-      - .env
+      - ../../.env
 
   nginx:
     build: nginx

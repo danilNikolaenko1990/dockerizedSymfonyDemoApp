@@ -1,5 +1,6 @@
 I took Symfony demo application and put it into the Docker to show "dockerization" skills.
 Also I replaced sqlite database with PostgreSQL.
+Original Symfony Demo application is here: https://github.com/symfony/demo
      
 To launch application 
 go to 

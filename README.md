@@ -1,5 +1,7 @@
-type 
-```cd build/dev``` and launch 
+I took Symfony demo application and put it into the Docker to show "dockerization" skills.     
+To launch application 
+go to 
+``` build/dev``` directory and run 
 ```./start.sh```
 
 Application is available at localhost/8080

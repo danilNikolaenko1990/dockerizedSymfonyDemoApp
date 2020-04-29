@@ -1,4 +1,6 @@
-I took Symfony demo application and put it into the Docker to show "dockerization" skills.     
+I took Symfony demo application and put it into the Docker to show "dockerization" skills.
+Also I replaced sqlite database with PostgreSQL.
+     
 To launch application 
 go to 
 ``` build/dev``` directory and run 

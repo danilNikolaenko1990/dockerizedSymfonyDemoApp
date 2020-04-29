@@ -38,6 +38,7 @@ services:
     container_name: php-fpm-container
     depends_on:
       - "db"
+    entrypoint: ./bin/wait-for-it.sh
     volumes:
       - ../../:/usr/src/www/
       - $SSH_AUTH_SOCK:/tmp/agent.sock

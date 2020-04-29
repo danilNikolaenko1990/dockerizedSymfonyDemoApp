@@ -10,7 +10,7 @@ doctrine:
 
         # IMPORTANT: when not use SQLite, you MUST configure your db driver and
         # server version, either here or in the DATABASE_URL env var (see .env file)
-        # driver: 'pdo_sqlite'
+        #driver: 'pdo_sqlite'
         # server_version: '3.15'
 
         # Only needed for MySQL (ignored otherwise)

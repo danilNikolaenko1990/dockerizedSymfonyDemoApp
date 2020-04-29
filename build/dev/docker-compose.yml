@@ -20,6 +20,29 @@ services:
     ports:
       - "8081:8080"
 
+  php:
+    build: php
+    container_name: php-fpm-container
+    depends_on:
+      - "db"
+    volumes:
+      - ../../:/usr/src/www/
+      - $SSH_AUTH_SOCK:/tmp/agent.sock
+    environment:
+      - SSH_AUTH_SOCK=/tmp/agent.sock
+    env_file:
+      - .env
+
+  php-cli:
+    build: php
+    depends_on:
+      - "db"
+    entrypoint: ./bin/wait-for-it.sh
+    volumes:
+      - ../../:/usr/src/www/
+    env_file:
+      - .env
+
   nginx:
     build: nginx
     container_name: nginx-container
@@ -33,16 +56,3 @@ services:
     depends_on:
       - php
 
-  php:
-    build: php
-    container_name: php-fpm-container
-    depends_on:
-      - "db"
-    entrypoint: ./bin/wait-for-it.sh
-    volumes:
-      - ../../:/usr/src/www/
-      - $SSH_AUTH_SOCK:/tmp/agent.sock
-    environment:
-      - SSH_AUTH_SOCK=/tmp/agent.sock
-    env_file:
-      - .env

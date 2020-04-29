@@ -2,14 +2,14 @@
 
 set -e
 
-host="$1"
-shift
 cmd="$@"
 
-until psql postgresql://admin:admin@postgres-container:5432/postgres -c '\l'; do
+until psql postgresql://$DB_USER:$DB_PASSWORD@$DB_HOST:5432/$DB_NAME -c '\l'; do
   >&2 echo "waiting for db"
   sleep 1
 done
 
 >&2 echo "Db is up - executing command"
+#echo "$DB_USER"
+
 exec $cmd

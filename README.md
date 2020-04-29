@@ -1,6 +1,13 @@
+type 
+```cd build/dev``` and launch 
+```./start.sh```
 
-to start application you need to perform follow commands
+Application is available at localhost/8080
 
-* cd build/dev
-* docker-compose up -d db
-* docker-compose run --rm php ./bin/composer.phar install && docker-compose up
+Postgres admin panel is available at
+localhost/8081
+ * System - PostgreSQL
+ * server - db
+ * username - admin
+ * password - admin
+ * database - postgres

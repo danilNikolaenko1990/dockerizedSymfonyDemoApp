@@ -9,6 +9,7 @@ services:
       - 5432:5432 #for phpstorm postgres client
     volumes:
       - ./postgres/schema.sql:/docker-entrypoint-initdb.d/10-init.sql
+      - ../../data/dump.sql:/docker-entrypoint-initdb.d/20-dump.sql
     environment:
       POSTGRES_DB: postgres
       POSTGRES_USER: admin

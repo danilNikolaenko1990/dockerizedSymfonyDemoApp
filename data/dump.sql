@@ -1,6 +1,6 @@
-insert into symfony_demo_user (id, full_name, username, email, password, roles) values (1, 'Jane Doe', 'jane_admin', 'jane_admin@symfony.com', '$2y$13$IMalnQpo7xfZD5FJGbEadOcqyj2mi/NQbQiI8v2wBXfjZ4nwshJlG', '"ROLE_ADMIN"]');
-insert into symfony_demo_user (id, full_name, username, email, password, roles) values (2, 'Tom Doe', 'tom_admin', 'tom_admin@symfony.com', '$2y$13$m45IusIVHTcBoBQTBd/V.O5EuwOSIYNiuWnw0gsgo7XJDQwDJ83aC', '"ROLE_ADMIN"]');
-insert into symfony_demo_user (id, full_name, username, email, password, roles) values (3, 'John Doe', 'john_user', 'john_user@symfony.com', '$2y$13$236BEGW9Gnbmv.lfrkZLwujj0jSOYFsQ5dI90BqM9s2mZ9WbzJmzO', '"ROLE_USER"]');
+insert into symfony_demo_user (id, full_name, username, email, password, roles) values (1, 'Jane Doe', 'jane_admin', 'jane_admin@symfony.com', '$2y$13$IMalnQpo7xfZD5FJGbEadOcqyj2mi/NQbQiI8v2wBXfjZ4nwshJlG', '["ROLE_ADMIN"]');
+insert into symfony_demo_user (id, full_name, username, email, password, roles) values (2, 'Tom Doe', 'tom_admin', 'tom_admin@symfony.com', '$2y$13$m45IusIVHTcBoBQTBd/V.O5EuwOSIYNiuWnw0gsgo7XJDQwDJ83aC', '["ROLE_ADMIN"]');
+insert into symfony_demo_user (id, full_name, username, email, password, roles) values (3, 'John Doe', 'john_user', 'john_user@symfony.com', '$2y$13$236BEGW9Gnbmv.lfrkZLwujj0jSOYFsQ5dI90BqM9s2mZ9WbzJmzO', '["ROLE_USER"]');
 
 insert into symfony_demo_tag (id, name) values (1, 'lorem');
 insert into symfony_demo_tag (id, name) values (2, 'ipsum');

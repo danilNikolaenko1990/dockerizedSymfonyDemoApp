@@ -7,10 +7,10 @@ Launch application:
 * run ```./build/dev/start.sh```
  
 
-Application is available at localhost/8080
+Application is available at localhost:8080
 
 Postgres admin panel is available at
-localhost/8081
+localhost:8081
  * System - PostgreSQL
  * server - db
  * username - admin

@@ -3,7 +3,7 @@ Also I replaced sqlite database with PostgreSQL.
 Original Symfony Demo application is here: https://github.com/symfony/demo
      
 Launch application:
-* go to project folder ```dockerizedSymfonyDemoApp```
+* go to project folder ```cd dockerizedSymfonyDemoApp```
 * run ```./build/dev/start.sh```
  
 

@@ -4,7 +4,7 @@ set -e
 
 cmd="$@"
 
-until psql postgresql://$DB_USER:$DB_PASSWORD@$DB_HOST:5432/$DB_NAME -c '\l'; do
+until psql $DATABASE_URL -c '\l'; do
   >&2 echo "waiting for db"
   sleep 1
 done

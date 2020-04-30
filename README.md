@@ -2,10 +2,10 @@ I took Symfony demo application and put it into the Docker to show "dockerizatio
 Also I replaced sqlite database with PostgreSQL.
 Original Symfony Demo application is here: https://github.com/symfony/demo
      
-To launch application 
-go to 
-``` build/dev``` directory and run 
-```./start.sh```
+Launch application:
+* go to project folder ```dockerizedSymfonyDemoApp```
+* run ```./build/dev/start.sh```
+ 
 
 Application is available at localhost/8080
 
